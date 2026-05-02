@@ -1,0 +1,16 @@
+{
+  "name": "guard",
+  "version": "1.0.0",
+  "description": "Claude CLI wrapper with .env safety check",
+  "bin": {
+    "guard": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "license": "MIT"
+}
