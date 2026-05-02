@@ -116,6 +116,9 @@ async function ensureHook() {
 
 await ensureHook();
 
+console.log(`\n${c.bold}guard${c.reset} ${c.dim}·${c.reset} Keeps your secrets safe by blocking Claude sessions when ${c.yellow}.env${c.reset} files are present.`);
+console.log(`${c.dim}Move .env files to a safe place outside the project before starting a session.${c.reset}\n`);
+
 const args = process.argv.slice(2);
 const child = spawn("claude", args, { stdio: "inherit", shell: true });
 
