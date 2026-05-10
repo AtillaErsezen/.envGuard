@@ -19,5 +19,27 @@
     "url": "https://github.com/AtillaErsezen/.envGuard"
   },
   "type": "module",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "env",
+    "dotenv",
+    "security",
+    "encryption",
+    "secrets",
+    "hooks",
+    "ai-safety",
+    "guard",
+    "protect",
+    "claude code",
+    ".env",
+    "API",
+    "api",
+    "development",
+    "safety",
+    "ai",
+    "agent",
+    ""
+  ],
   "license": "MIT"
 }
