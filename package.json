@@ -1,7 +1,7 @@
 {
   "name": "@atillaersezke/envguard",
   "version": "1.0.1",
-  "description": "Claude CLI wrapper with .env safety check",
+  "description": "Claude CLI hook with 100% .env file protection",
   "scripts": {
     "test": "node --test",
     "postinstall": "node install.js"
@@ -13,6 +13,10 @@
   ],
   "engines": {
     "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtillaErsezen/envguard"
   },
   "type": "module",
   "license": "MIT"
