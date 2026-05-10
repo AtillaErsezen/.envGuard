@@ -5,8 +5,15 @@
   "bin": {
     "guard": "./index.js"
   },
+  "scripts": {
+    "test": "node --test",
+    "postinstall": "node install.js"
+  },
   "files": [
-    "index.js"
+    "index.js",
+    "install.js",
+    "encrypt.js",
+    "decrypt.js"
   ],
   "engines": {
     "node": ">=18"
