@@ -1,16 +1,12 @@
 {
-  "name": "guard",
+  "name": "envguard",
   "version": "1.0.0",
   "description": "Claude CLI wrapper with .env safety check",
-  "bin": {
-    "guard": "./index.js"
-  },
   "scripts": {
     "test": "node --test",
     "postinstall": "node install.js"
   },
   "files": [
-    "index.js",
     "install.js",
     "encrypt.js",
     "decrypt.js"
