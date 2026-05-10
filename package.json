@@ -1,6 +1,6 @@
 {
   "name": "@atillaersezke/envguard",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Claude CLI hook with 100% .env file protection",
   "scripts": {
     "test": "node --test",
