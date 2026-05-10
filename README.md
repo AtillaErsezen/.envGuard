@@ -10,9 +10,9 @@
 
 **Keeps your `.env` secrets out of Claude's context — automatically.**
 
-![license](https://img.shields.io/badge/license-MIT-black?style=flat-square)&nbsp;
-![node](https://img.shields.io/badge/node-%3E%3D18-black?style=flat-square)&nbsp;
-![platform](https://img.shields.io/badge/platform-Windows-black?style=flat-square)
+![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)&nbsp;
+![node](https://img.shields.io/badge/node-%3E%3D18-brightgreen?style=flat-square)&nbsp;
+![platform](https://img.shields.io/badge/platform-Windows-0078D4?style=flat-square)
 
 </div>
 
