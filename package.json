@@ -1,5 +1,5 @@
 {
-  "name": "envguard",
+  "name": "@atillaersezke/.envguard",
   "version": "1.0.0",
   "description": "Claude CLI wrapper with .env safety check",
   "scripts": {
