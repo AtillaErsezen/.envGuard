@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
-import { join } from "path";
+import { existsSync, readFileSync, writeFileSync, mkdirSync, copyFileSync } from "fs";
+import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export const HOOK_MARKER = "guard-env-encrypt";
 
@@ -18,10 +20,8 @@ const c = {
   dim:    "\x1b[2m",
 };
 
-// Hook commands invoke the JS scripts bundled inside node_modules/guard/.
-// Using node directly avoids any shell-specific issues (PowerShell 5 vs 7, etc.).
-export const encryptCmd = `# ${HOOK_MARKER}\nnode node_modules/guard/encrypt.js`;
-export const decryptCmd = `# guard-env-decrypt\nnode node_modules/guard/decrypt.js`;
+export const encryptCmd = `# ${HOOK_MARKER}\nnode node_modules/@atillaersezke/envguard/encrypt.js`;
+export const decryptCmd = `# guard-env-decrypt\nnode node_modules/@atillaersezke/envguard/decrypt.js`;
 
 const encryptEntry = {
   hooks: [{ type: "command", shell: "powershell", command: encryptCmd }],
@@ -39,7 +39,19 @@ function hookAlreadyPresent(settings) {
   );
 }
 
+function ensureScriptsInstalled(projectRoot) {
+  const pkgDir = join(projectRoot, "node_modules", "@atillaersezke", "envguard");
+  if (!existsSync(pkgDir)) {
+    mkdirSync(pkgDir, { recursive: true });
+    copyFileSync(join(__dirname, "encrypt.js"), join(pkgDir, "encrypt.js"));
+    copyFileSync(join(__dirname, "decrypt.js"), join(pkgDir, "decrypt.js"));
+    console.log(`${c.green}✓${c.reset} guard: created node_modules/@atillaersezke/envguard/`);
+  }
+}
+
 export function install(settingsPath) {
+  ensureScriptsInstalled(projectRoot);
+
   let settings = {};
   let fileExisted = false;
 
