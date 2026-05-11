@@ -8,8 +8,8 @@
   },
   "files": [
     "install.js",
-    "encrypt.js",
-    "decrypt.js"
+    "encrypt.mjs",
+    "decrypt.mjs"
   ],
   "engines": {
     "node": ">=18"

@@ -14,14 +14,14 @@ const projectRoot = process.env.INIT_CWD ?? process.cwd();
 const SETTINGS_PATH = join(projectRoot, ".claude", "settings.local.json");
 
 const c = {
-  reset:  "\x1b[0m",
-  green:  "\x1b[32m",
+  reset: "\x1b[0m",
+  green: "\x1b[32m",
   yellow: "\x1b[33m",
-  dim:    "\x1b[2m",
+  dim: "\x1b[2m",
 };
 
-export const encryptCmd = `# ${HOOK_MARKER}\nnode node_modules/@atillaersezke/envguard/encrypt.js`;
-export const decryptCmd = `# guard-env-decrypt\nnode node_modules/@atillaersezke/envguard/decrypt.js`;
+export const encryptCmd = `# ${HOOK_MARKER}\nnode node_modules/@atillaersezke/envguard/encrypt.mjs`;
+export const decryptCmd = `# guard-env-decrypt\nnode node_modules/@atillaersezke/envguard/decrypt.mjs`;
 
 const encryptEntry = {
   hooks: [{ type: "command", shell: "powershell", command: encryptCmd }],
@@ -43,8 +43,8 @@ function ensureScriptsInstalled(projectRoot) {
   const pkgDir = join(projectRoot, "node_modules", "@atillaersezke", "envguard");
   if (!existsSync(pkgDir)) {
     mkdirSync(pkgDir, { recursive: true });
-    copyFileSync(join(__dirname, "encrypt.js"), join(pkgDir, "encrypt.js"));
-    copyFileSync(join(__dirname, "decrypt.js"), join(pkgDir, "decrypt.js"));
+    copyFileSync(join(__dirname, "encrypt.mjs"), join(pkgDir, "encrypt.mjs"));
+    copyFileSync(join(__dirname, "decrypt.mjs"), join(pkgDir, "decrypt.mjs"));
     console.log(`${c.green}✓${c.reset} guard: created node_modules/@atillaersezke/envguard/`);
   }
 }

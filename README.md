@@ -54,9 +54,9 @@ Hooks are registered automatically on install. Nothing else to configure.
 
 hooks:
   UserPromptSubmit:
-    - command: node node_modules/@atillaersezke/envguard/encrypt.js
+    - command: node node_modules/@atillaersezke/envguard/encrypt.mjs
   Stop:
-    - command: node node_modules/@atillaersezke/envguard/decrypt.js
+    - command: node node_modules/@atillaersezke/envguard/decrypt.mjs
 ```
 
 ---
