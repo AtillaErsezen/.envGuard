@@ -11,7 +11,7 @@ export const HOOK_MARKER = "guard-env-encrypt";
 // INIT_CWD is set by npm to the directory where `npm install` was invoked,
 // so we always write into the consuming project, not this package's own dir.
 const projectRoot = process.env.INIT_CWD ?? process.cwd();
-const SETTINGS_PATH = join(projectRoot, ".claude", "settings.local.json");
+const SETTINGS_PATH = join(projectRoot, ".claude", "settings.json");
 
 const c = {
   reset: "\x1b[0m",
@@ -60,7 +60,7 @@ export function install(settingsPath) {
     try {
       settings = JSON.parse(readFileSync(settingsPath, "utf8"));
     } catch {
-      console.error("guard: could not parse settings.local.json — aborting to avoid data loss.");
+      console.error("guard: could not parse settings.json — aborting to avoid data loss.");
       process.exit(1);
     }
   } else {

@@ -13,14 +13,14 @@ function tempDir() {
 
 // Returns a settings path inside a fresh temp dir that has NO .claude folder yet.
 function newSettingsPath() {
-  return join(tempDir(), ".claude", "settings.local.json");
+  return join(tempDir(), ".claude", "settings.json");
 }
 
 // Returns a settings path inside a temp dir whose .claude folder already exists.
 function existingSettingsPath(content = {}) {
   const dir = tempDir();
   mkdirSync(join(dir, ".claude"));
-  const p = join(dir, ".claude", "settings.local.json");
+  const p = join(dir, ".claude", "settings.json");
   writeFileSync(p, JSON.stringify(content, null, 2));
   return p;
 }
@@ -31,7 +31,7 @@ function read(p) {
 
 // ── 1. File absent ────────────────────────────────────────────────────────────
 
-test("1a — creates .claude dir and settings.local.json when file is absent", () => {
+test("1a — creates .claude dir and settings.json when file is absent", () => {
   const p = newSettingsPath();
 
   install(p);
