@@ -10,6 +10,11 @@
 
 ---
 
+<p align="center">
+  <a href="https://github.com/AtillaErsezen/.envGuard/blob/main/assets/demo.mp4"><img src="https://raw.githubusercontent.com/AtillaErsezen/.envGuard/main/assets/demo.jpg" alt="Watch the envguard demo video" width="720"></a>
+  <br><sub>▶ Click to watch the 22s demo</sub>
+</p>
+
 ## How it works
 
 ```
